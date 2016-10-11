@@ -7,7 +7,7 @@ public class StringCalculatorTest
 {
 	public static void main (String args[])
 	{
-		org.junit.runner.JUnitCore.main("is.ru.stringcalculator.CalculatorTest");
+		org.junit.runner.JUnitCore.main("is.ru.stringcalculator.stringcalculatorTest");
 	}
 		
 	@Test
@@ -31,7 +31,6 @@ public class StringCalculatorTest
 	@Test
 	public void TestAddEmptyString()
 	{
-		assertEquals(-1, stringcalculator.add("xxx"));
+		assertEquals(6, stringcalculator.add("1,2,3"));
 	}
-
 }
