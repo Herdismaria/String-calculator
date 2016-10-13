@@ -1,5 +1,7 @@
 package is.ru.stringcalculator;
 
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -63,4 +65,22 @@ public class StringCalculatorTest
 	{
 		assertEquals(6, StringCalculator.add("1\n2\n3"));
 	}
+
+	@Rule
+    public final ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void TestAddExceptionOneNumber() {
+        thrown.expect(IllegalArgumentException.class);
+        StringCalculator.add("-1");
+    }
+
+
+
+
+
+
+
+
+
 }

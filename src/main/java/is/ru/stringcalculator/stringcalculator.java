@@ -14,6 +14,10 @@ public class StringCalculator
 		}
 		else
 		{
+		    if (Integer.parseInt(numbers) < 0)
+		    {
+		        throw new IllegalArgumentException();
+		    }
 			return Integer.parseInt(numbers);
 		}
 	}
@@ -21,6 +25,22 @@ public class StringCalculator
 	public static int GetSum(String numbers)
 	{
 		String[] nums = numbers.split(",|\\n");
+		String msg = "Negatives not allowed:";
+		int msglength = msg.length();
+		System.out.println(msglength);
+
+		for (int i = 0; i < nums.length; i++)
+		{
+			if (Integer.parseInt(nums[i]) < 0)
+			{
+				msg += (", " + nums[i]);
+			}
+		}
+        System.out.println(msg.length());
+		if (msg.length() > msglength)
+		{
+			throw new IllegalArgumentException();
+		}
 		return Sum(nums);
 	}
 
