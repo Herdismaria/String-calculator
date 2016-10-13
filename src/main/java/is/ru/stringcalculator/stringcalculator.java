@@ -8,9 +8,9 @@ public class StringCalculator
 		{
 			return 0;
 		}
-		else if (numbers.contains(","))
+		else if (numbers.contains(",") || numbers.contains("\n"))
 		{
-			return getsum(numbers);
+			return GetSum(numbers);
 		}
 		else
 		{
@@ -18,16 +18,20 @@ public class StringCalculator
 		}
 	}
 
-	public static int getsum(String numbers)
+	public static int GetSum(String numbers)
 	{
-		String[] num = numbers.split(",");
+		String[] nums = numbers.split(",|\\n");
+		return Sum(nums);
+	}
+
+	public static int Sum(String[] numbers)
+	{
 		int sum = 0;
-
-		for (int i = 0; i < num.length; i++)
+		for (int i = 0; i < numbers.length; i++)
 		{
-			sum += Integer.parseInt(num[i]);
+			sum += Integer.parseInt(numbers[i]);
 		}
-
 		return sum;
 	}
+
 } 

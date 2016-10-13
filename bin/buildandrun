@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh bin/clean
-sh bin/compile
-sh bin/compiletests
-sh bin/runtests
+./bin/clean
+./bin/compile
+./bin/compiletests
+./bin/runtests

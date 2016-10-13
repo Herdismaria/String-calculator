@@ -45,4 +45,22 @@ public class StringCalculatorTest
 	{
 		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
 	}
+
+	@Test
+	public void TestAddOneNewLineString()
+	{
+		assertEquals(3, StringCalculator.add("1\n2"));
+	}
+
+	@Test
+	public void TestAddBothNewLineAndCommaString()
+	{
+		assertEquals(6, StringCalculator.add("1,2\n3"));
+	}
+
+	@Test
+	public void TestAddMultipleNewLineString()
+	{
+		assertEquals(6, StringCalculator.add("1\n2\n3"));
+	}
 }
