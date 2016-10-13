@@ -33,4 +33,16 @@ public class StringCalculatorTest
 	{
 		assertEquals(6, StringCalculator.add("1,2,3"));
 	}
+
+	@Test
+	public void TestAddFourString()
+	{
+		assertEquals(7, StringCalculator.add("1,2,3,1"));
+	}
+
+	@Test
+	public void TestAddManyString()
+	{
+		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
+	}
 }
