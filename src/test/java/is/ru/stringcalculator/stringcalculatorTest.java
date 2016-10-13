@@ -71,10 +71,18 @@ public class StringCalculatorTest
     public final ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void TestAddExceptionOneNumber() {
+    public void TestAddExceptionOneNegNumber() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Negatives not allowed: -1");
         StringCalculator.add("-1");
+    }
+
+        @Test
+    public void TestAddExceptiontwoNegNumber() 
+    {
+    	thrown.expect(IllegalArgumentException.class);
+    	thrown.expectMessage("Negatives not allowed: -1,-3");
+        StringCalculator.add("-1,-3,3,2,3");
     }
 
 

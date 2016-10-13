@@ -36,7 +36,7 @@ public class StringCalculator
 			{
 				if (count > 0)
 				{
-					msg += ", ";
+					msg += ",";
 				}
 				msg += (nums[i]);
 				count++;
@@ -45,7 +45,7 @@ public class StringCalculator
         System.out.println(msg.length());
 		if (msg.length() > msglength)
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException(msg);
 		}
 		return Sum(nums);
 	}
