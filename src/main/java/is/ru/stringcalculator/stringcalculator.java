@@ -16,7 +16,7 @@ public class StringCalculator
 		{
 		    if (Integer.parseInt(numbers) < 0)
 		    {
-		        throw new IllegalArgumentException();
+		        throw new IllegalArgumentException(("Negatives not allowed: "+ Integer.parseInt(numbers)));
 		    }
 			return Integer.parseInt(numbers);
 		}
@@ -25,15 +25,21 @@ public class StringCalculator
 	public static int GetSum(String numbers)
 	{
 		String[] nums = numbers.split(",|\\n");
-		String msg = "Negatives not allowed:";
+		String msg = "Negatives not allowed: ";
 		int msglength = msg.length();
 		System.out.println(msglength);
+		int count = 0;
 
 		for (int i = 0; i < nums.length; i++)
 		{
 			if (Integer.parseInt(nums[i]) < 0)
 			{
-				msg += (", " + nums[i]);
+				if (count > 0)
+				{
+					msg += ", ";
+				}
+				msg += (nums[i]);
+				count++;
 			}
 		}
         System.out.println(msg.length());
