@@ -115,4 +115,10 @@ public class StringCalculatorTest
 		assertEquals(6, StringCalculator.add("//a\n1a2a3"));
 	}
 
+	@Test
+	public void TestAddDeilimiterThree()
+	{
+		assertEquals(6, StringCalculator.add("//a\n1\n2a3"));
+	}
+
 }

@@ -21,7 +21,7 @@ public class StringCalculator
 		if (numbers.charAt(0) == '/')
 		{
 			delim = Character.toString(numbers.charAt(2));
-			nums = numbers.substring(4).split(delim);
+			nums = numbers.substring(4).split(delim + "|\\n");
 		}
 		else 
 		{
