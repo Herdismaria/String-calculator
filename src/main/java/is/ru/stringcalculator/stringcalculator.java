@@ -16,7 +16,19 @@ public class StringCalculator
 
 	public static int GetSum(String numbers)
 	{
-		String[] nums = numbers.split(",|\\n");
+		String delim;
+		String[] nums; 
+		if (numbers.charAt(0) == '/')
+		{
+			delim = Character.toString(numbers.charAt(2));
+			nums = numbers.substring(4).split(delim);
+		}
+		else 
+		{
+			delim = ",|\\n";
+			nums = numbers.split(delim);
+		}
+
 		CheckForNegatives(nums);
 		return Sum(nums);
 	}

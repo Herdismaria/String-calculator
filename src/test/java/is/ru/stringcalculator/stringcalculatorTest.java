@@ -97,12 +97,22 @@ public class StringCalculatorTest
 		assertEquals(2, StringCalculator.add("1001,2"));
 	}
 
+	@Test
+	public void TestAddOneLargeNumber()
+	{
+		assertEquals(0, StringCalculator.add("1001"));
+	}
 
+	@Test
+	public void TestAddDeilimiterOne()
+	{
+		assertEquals(3, StringCalculator.add("//;\n1;2"));
+	}
 
-
-
-
-
-
+	@Test
+	public void TestAddDeilimiterTwo()
+	{
+		assertEquals(6, StringCalculator.add("//a\n1a2a3"));
+	}
 
 }
