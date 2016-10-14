@@ -20,49 +20,49 @@ public class StringCalculatorTest
 	}
 
 	@Test
-	public void TestAddESingleString()
+	public void TestAddESingleNumber()
 	{
 		assertEquals(1, StringCalculator.add("1"));
 	}
 
 	@Test
-	public void TestAddTwoString()
+	public void TestAddTwoNumbers()
 	{
 		assertEquals(3, StringCalculator.add("1,2"));
 	}
 
 	@Test
-	public void TestAddThreeString()
+	public void TestAddThreeNumbers()
 	{
 		assertEquals(6, StringCalculator.add("1,2,3"));
 	}
 
 	@Test
-	public void TestAddFourString()
+	public void TestAddFourNumbers()
 	{
 		assertEquals(7, StringCalculator.add("1,2,3,1"));
 	}
 
 	@Test
-	public void TestAddManyString()
+	public void TestAddManyNumbers()
 	{
 		assertEquals(10, StringCalculator.add("1,1,1,1,1,1,1,1,1,1"));
 	}
 
 	@Test
-	public void TestAddOneNewLineString()
+	public void TestAddOneNewLine()
 	{
 		assertEquals(3, StringCalculator.add("1\n2"));
 	}
 
 	@Test
-	public void TestAddBothNewLineAndCommaString()
+	public void TestAddBothNewLineAndComma()
 	{
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
 
 	@Test
-	public void TestAddMultipleNewLineString()
+	public void TestAddMultipleNewLine()
 	{
 		assertEquals(6, StringCalculator.add("1\n2\n3"));
 	}
@@ -77,13 +77,25 @@ public class StringCalculatorTest
         StringCalculator.add("-1");
     }
 
-        @Test
+    @Test
     public void TestAddExceptiontwoNegNumber() 
     {
     	thrown.expect(IllegalArgumentException.class);
     	thrown.expectMessage("Negatives not allowed: -1,-3");
         StringCalculator.add("-1,-3,3,2,3");
     }
+
+    @Test
+	public void TestAddNotLargeNumber()
+	{
+		assertEquals(1002, StringCalculator.add("1000,2"));
+	}
+
+	@Test
+	public void TestAddLargeNumber()
+	{
+		assertEquals(2, StringCalculator.add("1001,2"));
+	}
 
 
 

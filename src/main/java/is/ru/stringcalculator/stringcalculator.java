@@ -16,9 +16,16 @@ public class StringCalculator
 		{
 		    if (Integer.parseInt(numbers) < 0)
 		    {
-		        throw new IllegalArgumentException(("Negatives not allowed: "+ Integer.parseInt(numbers)));
+		       throw new IllegalArgumentException(("Negatives not allowed: "+ Integer.parseInt(numbers)));
 		    }
-			return Integer.parseInt(numbers);
+		    else if ( Integer.parseInt(numbers) > 1000)
+		    {
+		    	return 0;
+		    }
+		    else
+		    {
+				return Integer.parseInt(numbers);
+		    }
 		}
 	}
 
@@ -42,6 +49,7 @@ public class StringCalculator
 				count++;
 			}
 		}
+
         System.out.println(msg.length());
 		if (msg.length() > msglength)
 		{
@@ -55,7 +63,10 @@ public class StringCalculator
 		int sum = 0;
 		for (int i = 0; i < numbers.length; i++)
 		{
-			sum += Integer.parseInt(numbers[i]);
+			if (Integer.parseInt(numbers[i]) < 1001)
+			{
+				sum += Integer.parseInt(numbers[i]);
+			}
 		}
 		return sum;
 	}
