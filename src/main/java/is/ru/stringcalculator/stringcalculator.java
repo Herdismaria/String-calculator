@@ -16,25 +16,34 @@ public class StringCalculator
 
 	public static int GetSum(String numbers)
 	{
-		String delim;
+		String delim = GetDelimiter(numbers);
 		String[] nums; 
-		if (numbers.charAt(0) == '/')
+		
+		if (delim != ",|\\n")
 		{
-			delim = Character.toString(numbers.charAt(2));
-			nums = numbers.substring(4).split(delim + "|\\n");
+			return Sum(numbers.substring(4).split(delim + "|\\n"));
 		}
 		else 
 		{
-			delim = ",|\\n";
-			nums = numbers.split(delim);
+			return Sum(numbers.split(delim));
 		}
-
-		CheckForNegatives(nums);
-		return Sum(nums);
 	}
 
+	public static String GetDelimiter(String numbers)
+	{
+		String delim;
+		if (numbers.charAt(0) == '/')
+		{
+			return Character.toString(numbers.charAt(2));
+		}
+		else 
+		{
+			return ",|\\n";
+		}
+	}
 	public static int Sum(String[] numbers)
 	{
+		CheckForNegatives(numbers);
 		int sum = 0;
 		for (int i = 0; i < numbers.length; i++)
 		{
